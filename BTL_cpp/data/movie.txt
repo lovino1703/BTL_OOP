@@ -1,0 +1,5 @@
+M001,Inception,Khoa hoc vien tuong,Christopher Nolan,Leonardo DiCaprio,148,2010-07-16,8.8,Phim gia tuong ve giac mo trong giac mo
+M002,The Godfather,Toi pham,Francis Ford Coppola,Marlon Brando,175,1972-03-24,9.2,Bo phim kinh dien ve mafia
+M003,The Dark Knight,Hanh dong,Christopher Nolan,Christian Bale,152,2008-07-18,9,Phim sieu anh hung toi pham
+M004,Parasite,Chinh kich,Bong Joon Ho,Song Kang-ho,132,2019-05-30,8.6,Phim kinh di ve tang lop xa hoi
+M005,Pulp Fiction,Toi pham,Quentin Tarantino,John Travolta,154,1994-10-14,8.9,Cau chuyen toi pham phi tuyen tinh
