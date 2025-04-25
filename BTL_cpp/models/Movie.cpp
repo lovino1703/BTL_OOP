@@ -5,32 +5,32 @@
 #include "Movie.h"
 #include <bits/stdc++.h>
 
+using namespace std;
+
 Movie::Movie() : id(""), name(""), duration(0), genre(""), releaseDate(""), description("") {}
 
-Movie::Movie(std::string id, std::string name, std::string genre, std::string director, std::string actors,
-             int duration, std::string releaseDate, double rating, std::string description)
+Movie::Movie(string id, string name, string genre, string director, string actors,
+             int duration, string releaseDate, double rating, string description)
         : id(id), name(name), genre(genre), director(director), actors(actors),
-          duration(duration), releaseDate(releaseDate), rating(rating), description(description) {
+          duration(duration), releaseDate(releaseDate), rating(rating), description(description) {}
 
-}
-
-std::string Movie::getId() {
+string Movie::getId() {
     return id;
 }
 
-std::string Movie::getName() {
+string Movie::getName() {
     return name;
 }
 
-std::string Movie::getGenre() {
+string Movie::getGenre() {
     return genre;
 }
 
-std::string Movie::getDirector() {
+string Movie::getDirector() {
     return director;
 }
 
-std::string Movie::getActors() {
+string Movie::getActors() {
     return actors;
 }
 
@@ -38,7 +38,7 @@ int Movie::getDuration() {
     return duration;
 }
 
-std::string Movie::getReleaseDate() {
+string Movie::getReleaseDate() {
     return releaseDate;
 }
 
@@ -46,27 +46,27 @@ double Movie::getRating() {
     return rating;
 }
 
-std::string Movie::getDescription() {
+string Movie::getDescription() {
     return description;
 }
 
-void Movie::setId(const std::string& newId) {
+void Movie::setId(const string& newId) {
     id = newId;
 }
 
-void Movie::setName(const std::string& newName) {
+void Movie::setName(const string& newName) {
     name = newName;
 }
 
-void Movie::setGenre(const std::string& newGenre) {
+void Movie::setGenre(const string& newGenre) {
     genre = newGenre;
 }
 
-void Movie::setDirector(const std::string& newDirector) {
+void Movie::setDirector(const string& newDirector) {
     director = newDirector;
 }
 
-void Movie::setActors(const std::string& newActors) {
+void Movie::setActors(const string& newActors) {
     actors = newActors;
 }
 
@@ -74,7 +74,7 @@ void Movie::setDuration(const int& newDuration) {
     duration = newDuration;
 }
 
-void Movie::setReleaseDate(const std::string& newReleaseDate) {
+void Movie::setReleaseDate(const string& newReleaseDate) {
     releaseDate = newReleaseDate;
 }
 
@@ -82,6 +82,6 @@ void Movie::setRating(const double& newRating) {
     rating = newRating;
 }
 
-void Movie::setDescription(const std::string& newDescription) {
+void Movie::setDescription(const string& newDescription) {
     description = newDescription;
 }

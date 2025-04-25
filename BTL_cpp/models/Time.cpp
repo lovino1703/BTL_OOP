@@ -5,24 +5,24 @@
 #include "Time.h"
 #include <bits/stdc++.h>
 
+using namespace std;
+
 Time::Time() : id(""), startTime("") {}
 
-Time::Time(std::string id, std::string startTime) : id(id), startTime(startTime) {}
+Time::Time(string id, string startTime) : id(id), startTime(startTime) {}
 
-std::string Time::getId() {
+string Time::getId() {
     return id;
 }
 
-std::string Time::getStartTime() {
+string Time::getStartTime() {
     return startTime;
 }
 
-void Time::setId(const std::string& newId) {
+void Time::setId(const string& newId) {
     id = newId;
 }
 
-void Time::setStartTime(const std::string& newStartTime) {
+void Time::setStartTime(const string& newStartTime) {
     startTime = newStartTime;
 }
-
-

@@ -5,6 +5,7 @@
 #include "MovieService.h"
 #include <bits/stdc++.h>
 
+using namespace std;
 
 MovieService::MovieService() {}
 
@@ -16,49 +17,48 @@ void MovieService::removeMovieFromKeyboard() {
     // Hien thi danh sach phim de nguoi dung co the xem ID
     showAllMovies();
 
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|                    XOA PHIM                               |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|                    XOA PHIM                               |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 
-    std::string movieId;
-    std::cout << "| Nhap ID phim can xoa: ";
-    std::cin >> movieId;
+    string movieId;
+    cout << "| Nhap ID phim can xoa: ";
+    cin >> movieId;
 
     try {
         // Tim va xoa phim voi ID tuong ung
         removeMovie(movieId);
 
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
-        std::cout << "|               DA XOA PHIM THANH CONG!                     |" << std::endl;
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
-    } catch (const std::runtime_error& e) {
+        cout << "+-----------------------------------------------------------+" << endl;
+        cout << "|               DA XOA PHIM THANH CONG!                     |" << endl;
+        cout << "+-----------------------------------------------------------+" << endl;
+    } catch (const runtime_error& e) {
         // Xu ly truong hop khong tim thay phim
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
-        std::cout << "| Loi: " << std::left << std::setw(52) << e.what() << "|" << std::endl;
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
+        cout << "+-----------------------------------------------------------+" << endl;
+        cout << "| Loi: " << left << setw(52) << e.what() << "|" << endl;
+        cout << "+-----------------------------------------------------------+" << endl;
     }
 
     // Luu danh sach phim da cap nhat vao file
     saveMoviesToFile("../data/movie.txt");
 
     // Xoa buffer
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-
 void MovieService::updateMovieFromKeyboard() {
-    std::string movieId;
+    string movieId;
 
     // Hien thi danh sach phim de nguoi dung chon
     showAllMovies();
 
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|                    CAP NHAT THONG TIN PHIM                |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|                    CAP NHAT THONG TIN PHIM                |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 
     // Yeu cau ID phim can cap nhat
-    std::cout << "| Nhap ID phim can cap nhat: ";
-    std::cin >> movieId;
+    cout << "| Nhap ID phim can cap nhat: ";
+    cin >> movieId;
 
     // Tim phim voi ID da nhap
     bool found = false;
@@ -73,89 +73,89 @@ void MovieService::updateMovieFromKeyboard() {
     }
 
     if (!found) {
-        std::cout << "| Khong tim thay phim voi ID: " << movieId << std::endl;
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
+        cout << "| Khong tim thay phim voi ID: " << movieId << endl;
+        cout << "+-----------------------------------------------------------+" << endl;
         return;
     }
 
     // Hien thi thong tin phim hien tai
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|                THONG TIN PHIM HIEN TAI                    |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "| ID: " << std::left << std::setw(53) << currentMovie.getId() << "|" << std::endl;
-    std::cout << "| Ten: " << std::left << std::setw(52) << currentMovie.getName() << "|" << std::endl;
-    std::cout << "| The loai: " << std::left << std::setw(47) << currentMovie.getGenre() << "|" << std::endl;
-    std::cout << "| Dao dien: " << std::left << std::setw(47) << currentMovie.getDirector() << "|" << std::endl;
-    std::cout << "| Dien vien: " << std::left << std::setw(46) << currentMovie.getActors() << "|" << std::endl;
-    std::cout << "| Thoi luong: " << std::left << std::setw(45) << (std::to_string(currentMovie.getDuration()) + " phut") << "|" << std::endl;
-    std::cout << "| Ngay phat hanh: " << std::left << std::setw(41) << currentMovie.getReleaseDate() << "|" << std::endl;
-    std::cout << "| Danh gia: " << std::left << std::setw(46) << (std::to_string(currentMovie.getRating()) + "/10") << "|" << std::endl;
-    std::cout << "| Mo ta: " << std::left << std::setw(49) << currentMovie.getDescription() << "|" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|                THONG TIN PHIM HIEN TAI                    |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "| ID: " << left << setw(53) << currentMovie.getId() << "|" << endl;
+    cout << "| Ten: " << left << setw(52) << currentMovie.getName() << "|" << endl;
+    cout << "| The loai: " << left << setw(47) << currentMovie.getGenre() << "|" << endl;
+    cout << "| Dao dien: " << left << setw(47) << currentMovie.getDirector() << "|" << endl;
+    cout << "| Dien vien: " << left << setw(46) << currentMovie.getActors() << "|" << endl;
+    cout << "| Thoi luong: " << left << setw(45) << (to_string(currentMovie.getDuration()) + " phut") << "|" << endl;
+    cout << "| Ngay phat hanh: " << left << setw(41) << currentMovie.getReleaseDate() << "|" << endl;
+    cout << "| Danh gia: " << left << setw(46) << (to_string(currentMovie.getRating()) + "/10") << "|" << endl;
+    cout << "| Mo ta: " << left << setw(49) << currentMovie.getDescription() << "|" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 
-    std::cin.ignore(); // Xoa buffer
+    cin.ignore(); // Xoa buffer
 
-    std::cout << "|          NHAP THONG TIN MOI (DE TRONG DE GIU NGUYEN)      |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "|          NHAP THONG TIN MOI (DE TRONG DE GIU NGUYEN)      |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 
-    std::string name, genre, director, actors, releaseDate, description;
+    string name, genre, director, actors, releaseDate, description;
     int duration;
     double rating;
 
-    std::cout << "| Ten phim: ";
-    std::getline(std::cin, name);
+    cout << "| Ten phim: ";
+    getline(cin, name);
     if (name.empty()) name = currentMovie.getName();
 
-    std::cout << "| The loai: ";
-    std::getline(std::cin, genre);
+    cout << "| The loai: ";
+    getline(cin, genre);
     if (genre.empty()) genre = currentMovie.getGenre();
 
-    std::cout << "| Dao dien: ";
-    std::getline(std::cin, director);
+    cout << "| Dao dien: ";
+    getline(cin, director);
     if (director.empty()) director = currentMovie.getDirector();
 
-    std::cout << "| Dien vien: ";
-    std::getline(std::cin, actors);
+    cout << "| Dien vien: ";
+    getline(cin, actors);
     if (actors.empty()) actors = currentMovie.getActors();
 
-    std::cout << "| Thoi luong (phut): ";
-    std::string durationStr;
-    std::getline(std::cin, durationStr);
+    cout << "| Thoi luong (phut): ";
+    string durationStr;
+    getline(cin, durationStr);
     if (durationStr.empty()) {
         duration = currentMovie.getDuration();
     } else {
         try {
-            duration = std::stoi(durationStr);
-        } catch (const std::exception& e) {
-            std::cout << "| Loi: Thoi luong khong hop le. Giu nguyen gia tri cu." << std::endl;
+            duration = stoi(durationStr);
+        } catch (const exception& e) {
+            cout << "| Loi: Thoi luong khong hop le. Giu nguyen gia tri cu." << endl;
             duration = currentMovie.getDuration();
         }
     }
 
-    std::cout << "| Ngay phat hanh (YYYY-MM-DD): ";
-    std::getline(std::cin, releaseDate);
+    cout << "| Ngay phat hanh (YYYY-MM-DD): ";
+    getline(cin, releaseDate);
     if (releaseDate.empty()) releaseDate = currentMovie.getReleaseDate();
 
-    std::cout << "| Danh gia (1.0-10.0): ";
-    std::string ratingStr;
-    std::getline(std::cin, ratingStr);
+    cout << "| Danh gia (1.0-10.0): ";
+    string ratingStr;
+    getline(cin, ratingStr);
     if (ratingStr.empty()) {
         rating = currentMovie.getRating();
     } else {
         try {
-            rating = std::stod(ratingStr);
+            rating = stod(ratingStr);
             if (rating < 0 || rating > 10) {
-                std::cout << "| Loi: Danh gia phai tu 0 den 10. Giu nguyen gia tri cu." << std::endl;
+                cout << "| Loi: Danh gia phai tu 0 den 10. Giu nguyen gia tri cu." << endl;
                 rating = currentMovie.getRating();
             }
-        } catch (const std::exception& e) {
-            std::cout << "| Loi: Danh gia khong hop le. Giu nguyen gia tri cu." << std::endl;
+        } catch (const exception& e) {
+            cout << "| Loi: Danh gia khong hop le. Giu nguyen gia tri cu." << endl;
             rating = currentMovie.getRating();
         }
     }
 
-    std::cout << "| Mo ta: ";
-    std::getline(std::cin, description);
+    cout << "| Mo ta: ";
+    getline(cin, description);
     if (description.empty()) description = currentMovie.getDescription();
 
     // Tao doi tuong Movie moi voi thong tin da cap nhat
@@ -165,81 +165,80 @@ void MovieService::updateMovieFromKeyboard() {
     updateMovie(movieId, updatedMovie);
     saveMoviesToFile("../data/movie.txt");
 
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|              CAP NHAT PHIM THANH CONG!                    |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|              CAP NHAT PHIM THANH CONG!                    |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 }
 
-
 void MovieService::addMovieFromKeyboard() {
-    std::string id, name, genre, director, actors, releaseDate, description;
+    string id, name, genre, director, actors, releaseDate, description;
     int duration;
     double rating;
 
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|                    NHAP THONG TIN PHIM                    |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|                    NHAP THONG TIN PHIM                    |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 
-    std::cout << "| ID phim: ";
-    std::cin >> id;
+    cout << "| ID phim: ";
+    cin >> id;
 
-    Movie check = getMovieById(id); // Kiem tra ID phim da ton tai hay chua
+    Movie check = checkMovieById(id); // Kiem tra ID phim da ton tai hay chua
     if (check.getId() != "-1") {
-        std::cout << "| Loi: ID phim da ton tai. Vui long nhap ID khac." << std::endl;
+        cout << "| Loi: ID phim da ton tai. Vui long nhap ID khac." << endl;
         return;
     }
 
-    std::cin.ignore(); // Loai bo ky tu newline trong buffer
+    cin.ignore(); // Loai bo ky tu newline trong buffer
 
-    std::cout << "| Ten phim: ";
-    std::getline(std::cin, name);
+    cout << "| Ten phim: ";
+    getline(cin, name);
 
-    std::cout << "| The loai: ";
-    std::getline(std::cin, genre);
+    cout << "| The loai: ";
+    getline(cin, genre);
 
-    std::cout << "| Dao dien: ";
-    std::getline(std::cin, director);
+    cout << "| Dao dien: ";
+    getline(cin, director);
 
-    std::cout << "| Dien vien: ";
-    std::getline(std::cin, actors);
+    cout << "| Dien vien: ";
+    getline(cin, actors);
 
-    std::cout << "| Thoi luong (phut): ";
-    std::cin >> duration;
+    cout << "| Thoi luong (phut): ";
+    cin >> duration;
 
-    std::cin.ignore(); // Loai bo ky tu newline trong buffer
+    cin.ignore(); // Loai bo ky tu newline trong buffer
 
-    std::cout << "| Ngay phat hanh (YYYY-MM-DD): ";
-    std::getline(std::cin, releaseDate);
+    cout << "| Ngay phat hanh (YYYY-MM-DD): ";
+    getline(cin, releaseDate);
 
-    std::cout << "| Danh gia (1.0-10.0): ";
-    std::cin >> rating;
+    cout << "| Danh gia (1.0-10.0): ";
+    cin >> rating;
 
-    std::cin.ignore(); // Loai bo ky tu newline trong buffer
+    cin.ignore(); // Loai bo ky tu newline trong buffer
 
-    std::cout << "| Mo ta: ";
-    std::getline(std::cin, description);
+    cout << "| Mo ta: ";
+    getline(cin, description);
 
     // Tao doi tuong Movie moi va them vao danh sach
     Movie newMovie(id, name, genre, director, actors, duration, releaseDate, rating, description);
     addMovie(newMovie);
     saveMoviesToFile("../data/movie.txt");
 
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
-    std::cout << "|               DA THEM PHIM THANH CONG!                    |" << std::endl;
-    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    cout << "+-----------------------------------------------------------+" << endl;
+    cout << "|               DA THEM PHIM THANH CONG!                    |" << endl;
+    cout << "+-----------------------------------------------------------+" << endl;
 }
 
-void MovieService::removeMovie(const std::string& movieId) {
+void MovieService::removeMovie(const string& movieId) {
     for (auto it = movies.begin(); it != movies.end(); ++it) {
         if (it->getId() == movieId) {
             movies.erase(it);
             return;
         }
     }
-    throw std::runtime_error("Movie not found");
+    throw runtime_error("Movie not found");
 }
 
-Movie MovieService::getMovieById(const std::string& movieId) {
+Movie MovieService::getMovieById(const string& movieId) {
     for (auto& movie : movies) {
         if (movie.getId() == movieId) {
             return movie;
@@ -247,15 +246,15 @@ Movie MovieService::getMovieById(const std::string& movieId) {
     }
     Movie movie;
     movie.setId("-1");
-    throw std::runtime_error("Movie not found: " + movieId);
+    throw runtime_error("Movie not found: " + movieId);
     return movie;
 }
 
-std::vector<Movie> MovieService::getAllMovies() {
+vector<Movie> MovieService::getAllMovies() {
     return movies;
 }
 
-void MovieService::updateMovie(const std::string& movieId, Movie& updatedMovie) {
+void MovieService::updateMovie(const string& movieId, Movie& updatedMovie) {
     for (auto& movie : movies) {
         if (movie.getId() == movieId) {
             movie = updatedMovie;
@@ -264,34 +263,34 @@ void MovieService::updateMovie(const std::string& movieId, Movie& updatedMovie) 
     }
 }
 
-void MovieService::loadMoviesFromFile(const std::string& filename) {
-    std::ifstream file(filename);
+void MovieService::loadMoviesFromFile(const string& filename) {
+    ifstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Could not open file");
+        throw runtime_error("Could not open file");
     }
 
     movies.clear();
-    std::string line;
+    string line;
 
-    while (std::getline(file, line)) {
+    while (getline(file, line)) {
         if (line.empty()) continue;
 
-        std::istringstream iss(line);
-        std::string id, name, genre, director, actors, releaseDate, description;
-        std::string durationStr, ratingStr;
+        istringstream iss(line);
+        string id, name, genre, director, actors, releaseDate, description;
+        string durationStr, ratingStr;
 
-        std::getline(iss, id, ',');
-        std::getline(iss, name, ',');
-        std::getline(iss, genre, ',');
-        std::getline(iss, director, ',');
-        std::getline(iss, actors, ',');
-        std::getline(iss, durationStr, ',');
-        std::getline(iss, releaseDate, ',');
-        std::getline(iss, ratingStr, ',');
-        std::getline(iss, description);
+        getline(iss, id, ',');
+        getline(iss, name, ',');
+        getline(iss, genre, ',');
+        getline(iss, director, ',');
+        getline(iss, actors, ',');
+        getline(iss, durationStr, ',');
+        getline(iss, releaseDate, ',');
+        getline(iss, ratingStr, ',');
+        getline(iss, description);
 
-        int duration = std::stoi(durationStr);
-        double rating = std::stod(ratingStr);
+        int duration = stoi(durationStr);
+        double rating = stod(ratingStr);
 
         movies.push_back(Movie(id, name, genre, director, actors, duration, releaseDate, rating, description));
     }
@@ -299,10 +298,10 @@ void MovieService::loadMoviesFromFile(const std::string& filename) {
     file.close();
 }
 
-void MovieService::saveMoviesToFile(const std::string &filename) {
-    std::ofstream file(filename);
+void MovieService::saveMoviesToFile(const string &filename) {
+    ofstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Could not open file");
+        throw runtime_error("Could not open file");
     }
 
     for (auto& movie : movies) {
@@ -322,39 +321,48 @@ void MovieService::saveMoviesToFile(const std::string &filename) {
 
 void MovieService::showAllMovies() {
     if (movies.empty()) {
-        std::cout << "\n=== DANH SACH PHIM TRONG ===\n" << std::endl;
+        cout << "\n=== DANH SACH PHIM TRONG ===\n" << endl;
         return;
     }
 
-    std::cout << "\n==================== DANH SACH PHIM ====================\n" << std::endl;
+    cout << "\n==================== DANH SACH PHIM ====================\n" << endl;
 
     for (auto& movie : movies) {
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
-        std::cout << "| ID phim: " << std::left << std::setw(53) << movie.getId() << "|" << std::endl;
-        std::cout << "|-----------------------------------------------------------|" << std::endl;
-        std::cout << "| Ten phim:      " << std::left << std::setw(46) << movie.getName() << "|" << std::endl;
-        std::cout << "| The loai:      " << std::left << std::setw(46) << movie.getGenre() << "|" << std::endl;
-        std::cout << "| Dao dien:      " << std::left << std::setw(46) << movie.getDirector() << "|" << std::endl;
-        std::cout << "| Dien vien:     " << std::left << std::setw(46) << movie.getActors() << "|" << std::endl;
-        std::cout << "| Thoi luong:    " << std::left << std::setw(46) << (std::to_string(movie.getDuration()) + " phut") << "|" << std::endl;
-        std::cout << "| Ngay ra mat:   " << std::left << std::setw(46) << movie.getReleaseDate() << "|" << std::endl;
-        std::cout << "| Danh gia:      " << std::left << std::setw(46) << (std::to_string(movie.getRating()) + "/10") << "|" << std::endl;
-        std::cout << "|-----------------------------------------------------------|" << std::endl;
-        std::cout << "| Mo ta:                                                    |" << std::endl;
+        cout << "+-----------------------------------------------------------+" << endl;
+        cout << "| ID phim: " << left << setw(53) << movie.getId() << "|" << endl;
+        cout << "|-----------------------------------------------------------|" << endl;
+        cout << "| Ten phim:      " << left << setw(46) << movie.getName() << "|" << endl;
+        cout << "| The loai:      " << left << setw(46) << movie.getGenre() << "|" << endl;
+        cout << "| Dao dien:      " << left << setw(46) << movie.getDirector() << "|" << endl;
+        cout << "| Dien vien:     " << left << setw(46) << movie.getActors() << "|" << endl;
+        cout << "| Thoi luong:    " << left << setw(46) << (to_string(movie.getDuration()) + " phut") << "|" << endl;
+        cout << "| Ngay ra mat:   " << left << setw(46) << movie.getReleaseDate() << "|" << endl;
+        cout << "| Danh gia:      " << left << setw(46) << (to_string(movie.getRating()) + "/10") << "|" << endl;
+        cout << "|-----------------------------------------------------------|" << endl;
+        cout << "| Mo ta:                                                    |" << endl;
 
-        // Xử lý mô tả dài, tách thành nhiều dòng nếu cần
-        std::string description = movie.getDescription();
+        // Xu ly mo ta dai, tach thanh nhieu dong neu can
+        string description = movie.getDescription();
         int maxWidth = 57;
         for (size_t i = 0; i < description.length(); i += maxWidth) {
-            std::string line = description.substr(i, maxWidth);
-            std::cout << "| " << std::left << std::setw(57) << line << "|" << std::endl;
+            string line = description.substr(i, maxWidth);
+            cout << "| " << left << setw(57) << line << "|" << endl;
         }
 
-        std::cout << "+-----------------------------------------------------------+" << std::endl;
-        std::cout << std::endl;
+        cout << "+-----------------------------------------------------------+" << endl;
+        cout << endl;
     }
 
-    std::cout << "====================== KET THUC ======================" << std::endl;
+    cout << "====================== KET THUC ======================" << endl;
 }
 
-
+Movie MovieService::checkMovieById(const string &movieId) {
+    for (auto& movie : movies) {
+        if (movie.getId() == movieId) {
+            return movie;
+        }
+    }
+    Movie movie;
+    movie.setId("-1");
+    return movie;
+}

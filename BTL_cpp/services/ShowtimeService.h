@@ -7,16 +7,17 @@
 #include <bits/stdc++.h>
 #include "../models/Time.h"
 
+using namespace std;
+
 class ShowtimeService {
 private:
-    std::vector<Time> showtimes;
+    vector<Time> showtimes;
 public:
     ShowtimeService();
     void addShowtime(const Time& time);
-    void removeShowtime(const std::string& timeId);
-    std::vector<Time> getAllShowtimes();
-    void updateShowtime(const std::string& timeId, Time& newTime);
+    void removeShowtime(const string& timeId);
+    vector<Time> getAllShowtimes();
+    void updateShowtime(const string& timeId, Time& newTime);
 };
-
 
 #endif //BTLPHUC_SHOWTIMESERVICE_H

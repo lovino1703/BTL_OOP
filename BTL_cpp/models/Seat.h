@@ -4,25 +4,27 @@
 
 #include <string>
 
+using namespace std;
+
 class Seat {
 private:
-    std::string id;
-    std::string movieId;
-    std::string showtimeId;
+    string id;
+    string movieId;
+    string showtimeId;
     bool isAvailable;
 
 public:
     Seat();
-    Seat(std::string movieId, std::string id, std::string showtimeId, bool isAvailable);
+    Seat(string movieId, string id, string showtimeId, bool isAvailable);
 
-    std::string getId() const;
-    std::string getMovieId() const;
-    std::string getShowtimeId() const;
+    string getId() const;
+    string getMovieId() const;
+    string getShowtimeId() const;
     bool getIsAvailable() const;
 
-    void setId(std::string id);
-    void setMovieId(std::string movieId);
-    void setShowtimeId(std::string showtimeId);
+    void setId(string id);
+    void setMovieId(string movieId);
+    void setShowtimeId(string showtimeId);
     void setIsAvailable(bool isAvailable);
 };
 

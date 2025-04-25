@@ -6,22 +6,22 @@
 #define BTLPHUC_TIME_H
 #include<bits/stdc++.h>
 
+using namespace std;
+
 class Time {
 private:
-    std::string id;
-    std::string startTime;
+    string id;
+    string startTime;
 
 public:
     Time();
-    Time(std::string id, std::string startTime);
+    Time(string id, string startTime);
 
-    std::string getId();
-    std::string getStartTime();
+    string getId();
+    string getStartTime();
 
-    void setId(const std::string& newId);
-    void setStartTime(const std::string& newStartTime);
-
+    void setId(const string& newId);
+    void setStartTime(const string& newStartTime);
 };
-
 
 #endif //BTLPHUC_TIME_H

@@ -5,48 +5,50 @@
 #include "Customer.h"
 #include<bits/stdc++.h>
 
+using namespace std;
+
 Customer::Customer() : id(""), name(""), phone(""), email("") {}
 
-Customer::Customer(std::string id, std::string name, std::string phone, std::string email, std::vector<Ticket> tickets)
+Customer::Customer(string id, string name, string phone, string email, vector<Ticket> tickets)
         : id(id), name(name), phone(phone), email(email), tickets(tickets) {}
 
-std::string Customer::getId() {
+string Customer::getId() {
     return id;
 }
 
-std::string Customer::getName() {
+string Customer::getName() {
     return name;
 }
 
-std::string Customer::getPhone() {
+string Customer::getPhone() {
     return phone;
 }
 
-std::string Customer::getEmail() {
+string Customer::getEmail() {
     return email;
 }
 
-std::vector<Ticket> Customer::getTickets() {
+vector<Ticket> Customer::getTickets() {
     return tickets;
 }
 
-void Customer::setId(const std::string& newId) {
+void Customer::setId(const string& newId) {
     id = newId;
 }
 
-void Customer::setName(const std::string& newName) {
+void Customer::setName(const string& newName) {
     name = newName;
 }
 
-void Customer::setPhone(const std::string& newPhone) {
+void Customer::setPhone(const string& newPhone) {
     phone = newPhone;
 }
 
-void Customer::setEmail(const std::string& newEmail) {
+void Customer::setEmail(const string& newEmail) {
     email = newEmail;
 }
 
-void Customer::setTickets(const std::vector<Ticket>& newTickets) {
+void Customer::setTickets(const vector<Ticket>& newTickets) {
     tickets = newTickets;
 }
 

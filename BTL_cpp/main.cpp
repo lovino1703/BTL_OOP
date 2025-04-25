@@ -8,12 +8,13 @@
 #include "services/CustomerService.h"
 #include "handle.h"
 
+using namespace std;
+
 MovieService movieService;
 ShowtimeService showtimeService;
 TicketService ticketService;
 SeatService seatService;
 CustomerService customerService;
-
 
 void init() {
     showtimeService.addShowtime(Time("ST001", "09:00"));
@@ -32,17 +33,17 @@ void init() {
 
         // Load ticket data sau khi khoi tao
         ticketService.loadTicketsFromFile("../data/tickets.txt");
-    } catch (const std::exception &e) {
-        std::cerr << "Error loading data: " << e.what() << std::endl;
+    } catch (const exception &e) {
+        cerr << "Error loading data: " << e.what() << endl;
     }
 }
 
-void management_seat(){
+void management_seat() {
     int choice;
     do {
         handle::handle_view_seat_management();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -58,21 +59,20 @@ void management_seat(){
                 seatService.resetSeats();
                 break;
             case 5:
-                std::cout << "Returning to admin menu..." << std::endl;
+                cout << "Returning to admin menu..." << endl;
                 break;
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 5);
-
 }
 
 void management_customer() {
     int choice;
     do {
         handle::handle_view_customer_management();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -88,21 +88,20 @@ void management_customer() {
                 customerService.showAllCustomers();
                 break;
             case 5:
-                std::cout << "Returning to admin menu..." << std::endl;
+                cout << "Returning to admin menu..." << endl;
                 break;
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 5);
-
 }
 
 void management_mvie() {
     int choice;
     do {
         handle::handle_view_movie_management();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -118,7 +117,7 @@ void management_mvie() {
                 movieService.showAllMovies();
                 break;
             case 5:
-                std::cout << "Returning to admin menu..." << std::endl;
+                cout << "Returning to admin menu..." << endl;
                 break;
             default:
                 handle::handle_view_alert_choose_invalid();
@@ -130,8 +129,8 @@ void managemet_ticket() {
     int choice;
     do {
         handle::handle_view_ticket_management();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -144,22 +143,20 @@ void managemet_ticket() {
                 ticketService.showAllTickets();
                 break;
             case 4:
-                std::cout << "Returning to admin menu..." << std::endl;
+                cout << "Returning to admin menu..." << endl;
                 break;
             default:
                 handle::handle_view_alert_choose_invalid();
-
         }
     } while (choice != 4);
 }
-
 
 void menu_admin() {
     int choice;
     do {
         handle::handle_view_admin_menu();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -175,20 +172,20 @@ void menu_admin() {
                 management_customer();
                 break;
             case 5:
-                std::cout << "Logging out..." << std::endl;
+                cout << "Logging out..." << endl;
                 break;
             default:
                 handle::handle_view_alert_choose_invalid();
         }
-    } while (choice != 6);
+    } while (choice != 5);
 }
 
 void login_as_admin() {
-    std::string username, password;
+    string username, password;
     handle::handle_view_enter_username();
-    std::cin >> username;
+    cin >> username;
     handle::handle_view_enter_password();
-    std::cin >> password;
+    cin >> password;
 
     if (username == "admin" && password == "admin") {
         handle::handle_view_alert_login_success();
@@ -202,25 +199,23 @@ void menu_login() {
     int choice;
     do {
         handle::handle_view_login();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
                 login_as_admin();
                 break;
-            case 3:
-                std::cout << "Exiting..." << std::endl;
+            case 2:
+                cout << "Exiting..." << endl;
                 break;
             default:
                 handle::handle_view_alert_choose_invalid();
         }
-    } while (choice != 3);
-
+    } while (choice != 2);
 }
 
 int main() {
     init();
     menu_login();
 }
-

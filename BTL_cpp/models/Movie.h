@@ -7,43 +7,44 @@
 #include <bits/stdc++.h>
 #include "Ticket.h"
 
+using namespace std;
+
 class Movie {
 private:
-    std::string id;
-    std::string name;
-    std::string genre;
-    std::string director;
-    std::string actors;
+    string id;
+    string name;
+    string genre;
+    string director;
+    string actors;
     int duration;
-    std::string releaseDate;
+    string releaseDate;
     double rating;
-    std::string description;
+    string description;
 
 public:
     Movie();
-    Movie(std::string id, std::string name, std::string genre, std::string director, std::string actors,
-          int duration, std::string releaseDate, double rating, std::string description);
+    Movie(string id, string name, string genre, string director, string actors,
+          int duration, string releaseDate, double rating, string description);
 
-    std::string getId();
-    std::string getName();
-    std::string getGenre();
-    std::string getDirector();
-    std::string getActors();
+    string getId();
+    string getName();
+    string getGenre();
+    string getDirector();
+    string getActors();
     int getDuration();
-    std::string getReleaseDate();
+    string getReleaseDate();
     double getRating();
-    std::string getDescription();
+    string getDescription();
 
-    void setId(const std::string& newId);
-    void setName(const std::string& newName);
-    void setGenre(const std::string& newGenre);
-    void setDirector(const std::string& newDirector);
-    void setActors(const std::string& newActors);
+    void setId(const string& newId);
+    void setName(const string& newName);
+    void setGenre(const string& newGenre);
+    void setDirector(const string& newDirector);
+    void setActors(const string& newActors);
     void setDuration(const int& newDuration);
-    void setReleaseDate(const std::string& newReleaseDate);
+    void setReleaseDate(const string& newReleaseDate);
     void setRating(const double& newRating);
-    void setDescription(const std::string& newDescription);
+    void setDescription(const string& newDescription);
 };
-
 
 #endif //BTLPHUC_MOVIE_H

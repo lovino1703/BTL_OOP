@@ -5,6 +5,7 @@
 #ifndef BTLPHUC_HANDLE_H
 #define BTLPHUC_HANDLE_H
 
+using namespace std;
 
 class handle {
 public:

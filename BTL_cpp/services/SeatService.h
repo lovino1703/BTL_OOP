@@ -7,23 +7,23 @@
 #include <bits/stdc++.h>
 #include "../models/Seat.h"
 
+using namespace std;
+
 class SeatService {
 private:
-    std::vector<Seat> seats;
+    vector<Seat> seats;
 public:
     SeatService();
     void addSeat(const Seat& seat);
-    void reserveSeat(const std::string& seatId);
-    void cancelReservation(const std::string& seatId);
-    std::vector<Seat> getAllSeats();
-    void loadSeatsFromFile(const std::string& filename);
-    void saveSeatsToFile(const std::string& filename);
+    void reserveSeat(const string& seatId);
+    void cancelReservation(const string& seatId);
+    vector<Seat> getAllSeats();
+    void loadSeatsFromFile(const string& filename);
+    void saveSeatsToFile(const string& filename);
     void addSeatFromKeyboard();
     void removeSeatFromKeyboard();
     void showAllSeats();
     void resetSeats();
-
 };
-
 
 #endif //BTLPHUC_SEATSERVICE_H

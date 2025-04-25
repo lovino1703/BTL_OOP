@@ -6,30 +6,30 @@
 #define BTLPHUC_CUSTOMER_H
 #include<bits/stdc++.h>
 #include "../models/Ticket.h"
-
+using namespace std;
 
 class Customer {
 private:
-    std::string id;
-    std::string name;
-    std::string phone;
-    std::string email;
-    std::vector<Ticket> tickets;
+    string id;
+    string name;
+    string phone;
+    string email;
+    vector<Ticket> tickets;
 
 public:
     Customer();
-    Customer(std::string id, std::string name, std::string phone, std::string email, std::vector<Ticket> tickets = {});
-    std::string getId();
-    std::string getName();
-    std::string getPhone();
-    std::string getEmail();
-    std::vector<Ticket> getTickets();
+    Customer(string id, string name, string phone, string email, vector<Ticket> tickets = {});
+    string getId();
+    string getName();
+    string getPhone();
+    string getEmail();
+    vector<Ticket> getTickets();
 
-    void setId(const std::string& newId);
-    void setName(const std::string& newName);
-    void setPhone(const std::string& newPhone);
-    void setEmail(const std::string& newEmail);
-    void setTickets(const std::vector<Ticket>& newTickets);
+    void setId(const string& newId);
+    void setName(const string& newName);
+    void setPhone(const string& newPhone);
+    void setEmail(const string& newEmail);
+    void setTickets(const vector<Ticket>& newTickets);
 
     void addTicket(const Ticket& ticket);
 

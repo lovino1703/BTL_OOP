@@ -7,23 +7,25 @@
 #include <bits/stdc++.h>
 #include "../models/Movie.h"
 
+using namespace std;
 
 class MovieService {
 private:
-    std::vector<Movie> movies;
+    vector<Movie> movies;
 public:
     MovieService();
     void addMovie(const Movie& movie);
     void addMovieFromKeyboard();
     void updateMovieFromKeyboard();
     void removeMovieFromKeyboard();
-    void removeMovie(const std::string& movieId);
-    Movie getMovieById(const std::string& movieId);
-    std::vector<Movie> getAllMovies();
-    void updateMovie(const std::string& movieId, Movie& updatedMovie);
-    void loadMoviesFromFile(const std::string& filename);
-    void saveMoviesToFile(const std::string& filename);
+    void removeMovie(const string& movieId);
+    Movie getMovieById(const string& movieId);
+    vector<Movie> getAllMovies();
+    void updateMovie(const string& movieId, Movie& updatedMovie);
+    void loadMoviesFromFile(const string& filename);
+    void saveMoviesToFile(const string& filename);
     void showAllMovies();
+    Movie checkMovieById(const string& movieId);
 };
 
 
