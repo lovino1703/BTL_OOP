@@ -1,0 +1,20 @@
+M001,Inception,Khoa hoc vien tuong,Christopher Nolan,Leonardo DiCaprio,148,2010-07-16,8.8,Phim gia tuong ve giac mo trong giac mo
+M002,The Godfather,Toi pham,Francis Ford Coppola,Marlon Brando,175,1972-03-24,9.2,Bo phim kinh dien ve mafia
+M003,The Dark Knight,Hanh dong,Christopher Nolan,Christian Bale,152,2008-07-18,9,Phim sieu anh hung toi pham
+M004,Parasite,Chinh kich,Bong Joon Ho,Song Kang-ho,132,2019-05-30,8.6,Phim kinh di ve tang lop xa hoi
+M005,Pulp Fiction,Toi pham,Quentin Tarantino,John Travolta,154,1994-10-14,8.9,Cau chuyen toi pham phi tuyen tinh
+M006,Interstellar,Khoa hoc vien tuong,Christopher Nolan,Matthew McConaughey,169,2014-11-07,8.6,Phim du hanh vu tru va tinh cha con
+M007,Forrest Gump,Chinh kich,Robert Zemeckis,Tom Hanks,142,1994-07-06,8.8,Cau chuyen cam dong ve mot nguoi dan ong dac biet
+M008,The Matrix,Hanh dong,Lana Wachowski,Keanu Reeves,136,1999-03-31,8.7,Phim gia tuong ve the gioi ao va con nguoi
+M009,Schindler's List,Lich su,Steven Spielberg,Liam Neeson,195,1993-12-15,9,Phim cam dong ve nan nhan Holocaust
+M010,Spirited Away,Hoat hinh,Hayao Miyazaki,Rumi Hiiragi,125,2001-07-20,8.6,Phim hoat hinh Nhat noi ve the gioi linh hon
+M011,Gladiator,Hanh dong,Ridley Scott,Russell Crowe,155,2000-05-05,8.5,Phim ve dau si La Ma di tim cong ly
+M012,The Shawshank Redemption,Chinh kich,Frank Darabont,Tim Robbins,142,1994-09-23,9.3,Phim ve niem tin va tu do trong nha tu
+M013,Whiplash,Chinh kich,Damien Chazelle,Miles Teller,106,2014-10-10,8.5,Phim ve dam me va ap luc trong am nhac
+M014,Coco,Hoat hinh,Lee Unkrich,Anthony Gonzalez,105,2017-10-27,8.4,Phim ve gia dinh va am nhac trong ngay le nguoi chet
+M015,Her,Tinh cam,Spike Jonze,Joaquin Phoenix,126,2013-12-18,8,Phim tinh cam gia tuong giua nguoi va AI
+M016,La La Land,Tinh cam,Damien Chazelle,Ryan Gosling,128,2016-12-09,8,Phim tinh cam am nhac day cam hung
+M017,Fight Club,Tam ly,David Fincher,Edward Norton,139,1999-10-15,8.8,Phim ve ban nga tam ly va xa hoi hien dai
+M018,The Revenant,Hanh dong,Alejandro G. Iñárritu,Leonardo DiCaprio,156,2015-12-25,8,Phim sinh ton trong hoang da bang gia ret
+M019,The Grand Budapest Hotel,Hai huoc,Wes Anderson,Ralph Fiennes,99,2014-03-28,8.1,Phim hai co phong cach nghe thuat doc dao
+M020,Joker,Tam ly,Todd Phillips,Joaquin Phoenix,122,2019-10-04,8.4,Phim tam ly ve su bien dang cua mot con nguoi
