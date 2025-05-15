@@ -177,7 +177,7 @@ void menu_admin() {
             default:
                 handle::handle_view_alert_choose_invalid();
         }
-    } while (choice != 6);
+    } while (choice != 5);
 }
 
 void login_as_admin() {
@@ -206,13 +206,13 @@ void menu_login() {
             case 1:
                 login_as_admin();
                 break;
-            case 3:
+            case 2:
                 cout << "Exiting..." << endl;
                 break;
             default:
                 handle::handle_view_alert_choose_invalid();
         }
-    } while (choice != 3);
+    } while (choice != 2);
 }
 
 int main() {

@@ -27,7 +27,6 @@ public:
 
     static void handle_view_banner_update_customer();
 
-
     static void handle_view_banner_list_customer();
 
     static void handle_view_alert_add_customer_success();
